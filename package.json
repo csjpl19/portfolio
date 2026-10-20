@@ -1,0 +1,13 @@
+{
+  "name": "carl-stephen-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio statique de Carl Stephen Junior Pierre Louis",
+  "scripts": {
+    "dev": "node scripts/serve.cjs",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}

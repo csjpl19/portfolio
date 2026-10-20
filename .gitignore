@@ -1,0 +1,12 @@
+node_modules/
+.local/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Documentation locale uniquement.
+*.[mM][dD]
