@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#edf1f7" />
     <meta
       name="description"
-      content="Merci pour votre prise de contact. Retrouvez le portfolio de Carl Stephen Junior Pierre Louis."
+      content="Thank you for getting in touch. Explore Carl Stephen Junior Pierre Louis’s portfolio." data-i18n-attrs="content:thank-you-for-getting-in-touch-explore"
     />
     <meta name="author" content="Carl Stephen Junior Pierre Louis" />
     <link
@@ -16,15 +16,15 @@
     />
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Carl Stephen Junior Pierre Louis" />
     <meta
       property="og:title"
-      content="Merci pour votre message — Carl Stephen Junior Pierre Louis"
+      content="Thank you for your message — Carl Stephen Junior Pierre Louis" data-i18n-attrs="content:thank-you-for-your-message-carl-stephen"
     />
     <meta
       property="og:description"
-      content="Merci pour votre prise de contact. Retrouvez le portfolio de Carl Stephen Junior Pierre Louis."
+      content="Thank you for getting in touch. Explore Carl Stephen Junior Pierre Louis’s portfolio." data-i18n-attrs="content:thank-you-for-getting-in-touch-explore"
     />
     <meta
       property="og:url"
@@ -35,21 +35,22 @@
       content="https://carlstephenjuniorpierrelouis.site/assets/images/portrait-professionnel.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Merci pour votre message</title>
+    <title data-i18n="thank-you-for-your-message">Thank you for your message</title>
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/fragments/header.css" />
     <link rel="stylesheet" href="css/fragments/footer.css" />
+    <script src="js/i18n.js" defer></script>
     <script src="js/header.js" defer></script>
     <script src="js/index.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#contenu-principal">Aller au contenu</a>
+    <a class="skip-link" href="#contenu-principal" data-i18n="skip-to-content">Skip to content</a>
     <header class="site-header">
       <div class="brand-group">
         <a
           class="brand"
           href="index.html"
-          aria-label="Carl Stephen Jr. Software Engineer, Full-Stack Jr — accueil"
+          aria-label="Carl Stephen Jr. Software Engineer, Full-Stack Jr — home" data-i18n-attrs="aria-label:carl-stephen-jr-software-engineer-full-stack"
         >
           <img
             class="brand__avatar"
@@ -65,7 +66,7 @@
         <a
           class="brand__company"
           href="index.html#solvix"
-          aria-label="Découvrir Solvix Engine"
+          aria-label="Discover Solvix Engine" data-i18n-attrs="aria-label:discover-solvix-engine"
           ><img
             src="assets/images/solvix-icon.webp"
             alt=""
@@ -78,46 +79,45 @@
         type="button"
         aria-expanded="false"
         aria-controls="navigation-principale"
-        aria-label="Ouvrir le menu"
+        aria-label="Open menu" data-i18n-attrs="aria-label:open-menu"
       >
         <span></span><span></span>
       </button>
       <nav
         class="primary-nav"
         id="navigation-principale"
-        aria-label="Navigation principale"
+        aria-label="Main navigation" data-i18n-attrs="aria-label:main-navigation"
       >
-        <a href="index.html">Accueil</a>
-        <a href="profil.html">Mon profil</a>
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="profil.html" data-i18n="my-profile">My profile</a>
         <a href="index.html#expertise">Expertise</a>
-        <a class="nav-contact" href="index.html#contact"
-          >Parlons de votre projet <span aria-hidden="true">↗</span></a
+        <a class="nav-contact" href="index.html#contact" data-i18n="let-s-talk-about-your-project"
+          >Let’s talk about your project <span aria-hidden="true">↗</span></a
         >
+
+        <button class="language-switch" type="button" aria-label="Switch to French" title="Switch to French" hidden></button>
       </nav>
     </header>
     <main id="contenu-principal" class="page-content">
       <section class="utility-page" aria-labelledby="titre-merci">
         <div class="utility-symbol" aria-hidden="true">↗</div>
-        <p class="eyebrow">Gardons le contact</p>
-        <h1 id="titre-merci">Merci pour<br />votre message.</h1>
-        <p class="lead">Une nouvelle conversation commence.</p>
-        <p>
-          Si vous avez finalisé la vérification du formulaire, votre demande a
-          été transmise au service d’envoi. Je pourrai vous répondre à l’adresse
-          e-mail que vous avez indiquée.
+        <p class="eyebrow" data-i18n="let-s-stay-in-touch">Let’s stay in touch</p>
+        <h1 id="titre-merci" data-i18n="thank-you-for your-message-226">Thank you for<br />your message.</h1>
+        <p class="lead" data-i18n="a-new-conversation-begins">A new conversation begins.</p>
+        <p data-i18n="if-you-completed-the-form-verification-your">
+          If you completed the form verification, your enquiry has been passed to the submission service. I can reply using the email address you provided.
         </p>
-        <p>
-          Cette page ne confirme pas à elle seule la livraison en boîte de
-          réception. En cas de doute, vous pouvez aussi
-          <a href="mailto:messagerie@carlstephenjuniorpierrelouis.site"
-            >m’écrire directement</a
+        <p data-i18n="this-page-alone-does-not-confirm-delivery -">
+          This page alone does not confirm delivery to my inbox. If you are unsure, you can also
+          <a href="mailto:messagerie@carlstephenjuniorpierrelouis.site" data-i18n="email-me-directly-230"
+            >email me directly</a
           >.
         </p>
         <div class="actions">
-          <a class="button button--primary" href="index.html"
-            >Retour à l’accueil <span aria-hidden="true">→</span></a
-          ><a class="button button--secondary" href="profil.html"
-            >Découvrir mon profil</a
+          <a class="button button--primary" href="index.html" data-i18n="back-to-home"
+            >Back to home <span aria-hidden="true">→</span></a
+          ><a class="button button--secondary" href="profil.html" data-i18n="explore-my-profile"
+            >Explore my profile</a
           >
         </div>
       </section>
@@ -125,13 +125,13 @@
     <footer class="site-footer">
       <div class="footer-top">
         <a class="footer-brand" href="index.html"
-          >Carl Stephen Junior Pierre Louis<span
-            >Du sens dans les idées. Du soin dans le code.</span
+          >Carl Stephen Junior Pierre Louis<span data-i18n="purpose-in-ideas-care-in-code"
+            >Purpose in ideas. Care in code.</span
           ></a
         ><a
           class="footer-backtop"
           href="#contenu-principal"
-          aria-label="Retour en haut de page"
+          aria-label="Back to top" data-i18n-attrs="aria-label:back-to-top"
           >↑</a
         >
       </div>
@@ -140,11 +140,11 @@
           © <span data-current-year>2026</span> Carl Stephen Junior Pierre
           Louis
         </p>
-        <nav aria-label="Navigation de pied de page">
-          <a href="profil.html">Mon profil</a
+        <nav aria-label="Footer navigation" data-i18n-attrs="aria-label:footer-navigation">
+          <a href="profil.html" data-i18n="my-profile">My profile</a
           ><a href="index.html#solvix">Solvix Engine</a
           ><a href="index.html#contact">Contact</a
-          ><a href="confidentialite.html">Confidentialité</a>
+          ><a href="confidentialite.html" data-i18n="privacy">Privacy</a>
         </nav>
       </div>
     </footer>

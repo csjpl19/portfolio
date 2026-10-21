@@ -1,53 +1,68 @@
-// Les pages et le formulaire restent utilisables sans JavaScript.
-document.querySelectorAll('[data-current-year]').forEach((element) => {
+// Pages and the native form remain usable without JavaScript.
+document.querySelectorAll('[data-current-year]').forEach(element => {
   element.textContent = String(new Date().getFullYear());
 });
 
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   const submitButton = contactForm.querySelector('[type="submit"]');
+  const submitLabel = [...submitButton.childNodes].find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
   const status = contactForm.querySelector('.form-status');
-  const initialLabel = submitButton.innerHTML;
-  let resetTimer;
-
-  // Le retour fonctionne aussi depuis l’URL github.io du dépôt ou l’aperçu local.
-  if (['http:', 'https:'].includes(window.location.protocol)) {
-    contactForm.elements.namedItem('_next').value = new URL('merci.html', window.location.href).href;
-  }
   const nameInput = contactForm.elements.namedItem('name');
   const messageInput = contactForm.elements.namedItem('message');
+  const i18n = window.PortfolioI18n;
+  let resetTimer;
+  let statusKey = '';
+
+  const updateReturnUrl = () => {
+    if (['http:', 'https:'].includes(location.protocol)) {
+      const url = new URL('merci.html', location.href);
+      url.searchParams.set('lang', i18n.language);
+      contactForm.elements.namedItem('_next').value = url.href;
+    }
+  };
+  const renderSubmission = () => {
+    submitLabel.textContent = i18n.t(submitButton.disabled ? 'form.opening' : 'form.send') + ' ';
+    status.textContent = statusKey ? i18n.t(statusKey) : '';
+  };
   const validateText = () => {
-    nameInput.setCustomValidity(nameInput.value.trim() ? '' : 'Indiquez votre nom.');
-    messageInput.setCustomValidity(messageInput.value.trim().length >= 20 ? '' : 'Décrivez votre demande en au moins 20 caractères.');
+    nameInput.setCustomValidity(nameInput.value.trim() ? '' : i18n.t('form.name'));
+    messageInput.setCustomValidity(messageInput.value.trim().length >= 20 ? '' : i18n.t('form.message'));
   };
-  [nameInput, messageInput].forEach((input) => input.addEventListener('input', validateText));
+  [nameInput, messageInput].forEach(input => input.addEventListener('input', validateText));
   const resetSubmission = () => {
-    window.clearTimeout(resetTimer);
+    clearTimeout(resetTimer);
     submitButton.disabled = false;
-    submitButton.innerHTML = initialLabel;
     contactForm.removeAttribute('aria-busy');
-    status.textContent = '';
+    statusKey = '';
+    renderSubmission();
   };
-  contactForm.addEventListener('submit', (event) => {
+  document.addEventListener('languagechange', () => {
+    updateReturnUrl();
+    validateText();
+    renderSubmission();
+  });
+  updateReturnUrl();
+  contactForm.addEventListener('submit', event => {
     validateText();
     if (!contactForm.reportValidity()) { event.preventDefault(); return; }
     if (!navigator.onLine) {
       event.preventDefault();
-      status.textContent = 'Vous semblez hors ligne. Votre message est conservé dans le formulaire : reconnectez-vous puis réessayez.';
+      statusKey = 'form.offline';
+      renderSubmission();
       return;
     }
     if (submitButton.disabled) { event.preventDefault(); return; }
-    // POST natif : FormSubmit gère la vérification anti-spam et le retour.
-    // Aucun succès d’envoi n’est simulé dans cette page.
+    // Native POST: FormSubmit handles verification and the redirect.
     submitButton.disabled = true;
-    submitButton.textContent = 'Ouverture de la vérification…';
     contactForm.setAttribute('aria-busy', 'true');
-    status.textContent = 'Vous allez accéder à la vérification anti-spam pour finaliser votre envoi.';
-    resetTimer = window.setTimeout(() => {
+    statusKey = 'form.pending';
+    renderSubmission();
+    resetTimer = setTimeout(() => {
       resetSubmission();
-      status.textContent = 'Si la page de vérification ne s’est pas ouverte, réessayez ou utilisez le lien e-mail ci-contre.';
+      statusKey = 'form.retry';
+      renderSubmission();
     }, 15000);
   });
-  // Réactive le bouton après un retour arrière du navigateur.
   window.addEventListener('pageshow', resetSubmission);
 }

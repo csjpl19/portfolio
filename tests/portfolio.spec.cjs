@@ -38,10 +38,10 @@ test('navigation au clavier, noms accessibles et liens sociaux', async ({ page }
   for (const file of pages) {
     await page.goto('/' + file);
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('link', { name: 'Aller au contenu' })).toBeFocused();
+    await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(/#contenu-principal$/);
-    await expect(page.locator('.brand')).toHaveAccessibleName(/Carl Stephen Jr\..*Software Engineer.*accueil/);
+    await expect(page.locator('.brand')).toHaveAccessibleName(/Carl Stephen Jr\..*Software Engineer.*home/);
     const brokenSemantics = await page.evaluate(() => {
       const ids = [...document.querySelectorAll('[id]')].map(el => el.id);
       return {
@@ -58,34 +58,34 @@ test('le repère de navigation suit les sections sans rester sur Accueil', async
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   const nav = page.locator('.primary-nav');
-  await expect(nav.locator('[aria-current]')).toHaveText('Accueil');
+  await expect(nav.locator('[aria-current]')).toHaveText('Home');
   await nav.getByRole('link', { name: 'Expertise', exact: true }).click();
   await expect(nav.locator('[aria-current]')).toHaveText('Expertise');
-  await nav.getByRole('link', { name: 'Parlons de votre projet' }).click();
-  await expect(nav.locator('[aria-current]')).toContainText('Parlons de votre projet');
+  await nav.getByRole('link', { name: 'Let’s talk about your project' }).click();
+  await expect(nav.locator('[aria-current]')).toContainText('Let’s talk about your project');
   await page.locator('#solvix').scrollIntoViewIfNeeded();
   await page.evaluate(() => document.getElementById('solvix').scrollIntoView());
   await expect(nav.locator('[aria-current]')).toHaveCount(0);
   await page.evaluate(() => window.scrollTo(0, 0));
-  await expect(nav.locator('[aria-current]')).toHaveText('Accueil');
+  await expect(nav.locator('[aria-current]')).toHaveText('Home');
 });
 
 test('profil, INUKA, projets indisponibles et Solvix futur', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('#projets')).toHaveCount(0);
-  await expect(page.locator('#solvix')).toContainText('Le projet n’est pas encore lancé');
-  await page.getByRole('link', { name: 'Voir mon profil' }).click();
+  await expect(page.locator('#solvix')).toContainText('The project has not launched yet');
+  await page.getByRole('link', { name: 'View my profile' }).click();
   await expect(page).toHaveURL(/profil\.html$/);
-  await expect(page.locator('#parcours')).toContainText('Université INUKA');
-  await expect(page.locator('#parcours')).toContainText('Étudiant en L4');
-  await expect(page.locator('#projets')).toContainText('Temporairement indisponibles');
-  await expect(page.locator('.primary-nav [aria-current="page"]')).toHaveText('Mon profil');
+  await expect(page.locator('#parcours')).toContainText('INUKA University');
+  await expect(page.locator('#parcours')).toContainText('Fourth-year (L4) student');
+  await expect(page.locator('#projets')).toContainText('Temporarily unavailable');
+  await expect(page.locator('.primary-nav [aria-current="page"]')).toHaveText('My profile');
 });
 
 test('menu mobile : ouverture, Échap, navigation et redimensionnement', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
-  const toggle = page.getByRole('button', { name: 'Ouvrir le menu' });
+  const toggle = page.getByRole('button', { name: 'Open menu' });
   await expect(page.locator('.primary-nav')).not.toBeVisible();
   await toggle.click();
   await expect(page.locator('.primary-nav')).toBeVisible();
@@ -101,11 +101,11 @@ test('menu mobile : ouverture, Échap, navigation et redimensionnement', async (
 });
 
 async function fillForm(page) {
-  await page.getByLabel('Votre nom *', { exact: true }).fill('Visiteur de test');
-  await page.getByLabel('Votre e-mail *', { exact: true }).fill('test@example.com');
+  await page.getByLabel('Your name *', { exact: true }).fill('Visiteur de test');
+  await page.getByLabel('Your email *', { exact: true }).fill('test@example.com');
   await page.getByLabel('Organisation').fill('Organisation de test');
-  await page.getByLabel('Le sujet de votre message').selectOption({ label: 'Création de site ou d’application' });
-  await page.getByLabel('Votre message *', { exact: true }).fill('Message de test local, aucun e-mail réel ne doit être envoyé.');
+  await page.getByLabel('Message subject').selectOption({ label: 'Website or application development' });
+  await page.getByLabel('Your message *', { exact: true }).fill('Message de test local, aucun e-mail réel ne doit être envoyé.');
 }
 
 test('validation du formulaire puis POST complet intercepté, sans e-mail réel', async ({ page }) => {
@@ -115,37 +115,37 @@ test('validation du formulaire puis POST complet intercepté, sans e-mail réel'
     await route.fulfill({ status: 303, headers: { location: 'http://127.0.0.1:4173/merci.html' } });
   });
   await page.goto('/');
-  await page.getByRole('button', { name: 'Envoyer mon message' }).click();
+  await page.getByRole('button', { name: 'Send my message' }).click();
   expect(payload).toBeUndefined();
   await fillForm(page);
-  await page.getByLabel('Votre message *', { exact: true }).fill('                         ');
-  await page.getByRole('button', { name: 'Envoyer mon message' }).click();
+  await page.getByLabel('Your message *', { exact: true }).fill('                         ');
+  await page.getByRole('button', { name: 'Send my message' }).click();
   expect(payload).toBeUndefined();
   await fillForm(page);
-  await page.getByRole('button', { name: 'Envoyer mon message' }).click();
+  await page.getByRole('button', { name: 'Send my message' }).click();
   await expect(page).toHaveURL(/merci\.html$/);
   expect(payload.method).toBe('POST');
   expect(payload.url).toBe('https://formsubmit.co/messagerie@carlstephenjuniorpierrelouis.site');
   expect(payload.data.get('name')).toBe('Visiteur de test');
   expect(payload.data.get('email')).toBe('test@example.com');
   expect(payload.data.get('organisation')).toBe('Organisation de test');
-  expect(payload.data.get('sujet')).toBe('Création de site ou d’application');
+  expect(payload.data.get('sujet')).toBe('Website or application development');
   expect(payload.data.get('message')).toContain('aucun e-mail réel');
   expect(payload.data.get('_honey')).toBe('');
   expect(payload.data.get('_captcha')).not.toBe('false');
-  expect(payload.data.get('_next')).toBe('http://127.0.0.1:4173/merci.html');
+  expect(payload.data.get('_next')).toBe('http://127.0.0.1:4173/merci.html?lang=en');
   await page.goBack();
-  await expect(page.getByRole('button', { name: 'Envoyer mon message' })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Send my message' })).toBeEnabled();
 });
 
 test('hors ligne : message préservé, erreur compréhensible et bouton disponible', async ({ page, context }) => {
   await page.goto('/');
   await fillForm(page);
   await context.setOffline(true);
-  await page.getByRole('button', { name: 'Envoyer mon message' }).click();
-  await expect(page.getByRole('status')).toContainText('hors ligne');
-  await expect(page.getByLabel('Votre message *', { exact: true })).toHaveValue(/Message de test local/);
-  await expect(page.getByRole('button', { name: 'Envoyer mon message' })).toBeEnabled();
+  await page.getByRole('button', { name: 'Send my message' }).click();
+  await expect(page.getByRole('status')).toContainText('offline');
+  await expect(page.getByLabel('Your message *', { exact: true })).toHaveValue(/Message de test local/);
+  await expect(page.getByRole('button', { name: 'Send my message' })).toBeEnabled();
 });
 
 test('sans JavaScript : navigation mobile et formulaire natif disponibles', async ({ browser }) => {
@@ -157,10 +157,13 @@ test('sans JavaScript : navigation mobile et formulaire natif disponibles', asyn
     await route.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: '<p>Envoi intercepté par le test.</p>' });
   });
   await page.goto('http://127.0.0.1:4173/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('h1')).toContainText('Clear ideas.');
+  await expect(page.locator('.language-switch')).not.toBeVisible();
   await expect(page.locator('.primary-nav')).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Ouvrir le menu' })).not.toBeVisible();
+  await expect(page.getByRole('button', { name: 'Open menu' })).not.toBeVisible();
   await fillForm(page);
-  await page.getByRole('button', { name: 'Envoyer mon message' }).click();
+  await page.getByRole('button', { name: 'Send my message' }).click();
   await expect(page.getByText('Envoi intercepté par le test.')).toBeVisible();
   expect(sent).toBe(true);
   await context.close();

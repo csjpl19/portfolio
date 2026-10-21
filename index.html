@@ -1,23 +1,23 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#edf1f7" />
     <meta
       name="description"
-      content="Carl Stephen Junior Pierre Louis, Software Engineer, Dev Full-Stack Jr."
+      content="Carl Stephen Junior Pierre Louis, Software Engineer and Junior Full-Stack Developer." data-i18n-attrs="content:carl-stephen-junior-pierre-louis-software-engineer"
     />
     <meta name="author" content="Carl Stephen Junior Pierre Louis" />
     <link rel="canonical" href="https://carlstephenjuniorpierrelouis.site/" />
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Carl Stephen Junior Pierre Louis" />
     <meta property="og:title" content="Carl Stephen Junior Pierre Louis" />
     <meta
       property="og:description"
-      content="De votre idée à une expérience web claire, utile et soignée. Découvrez mon approche et parlons de votre projet."
+      content="From your idea to a clear, useful and carefully crafted web experience. Discover my approach and let’s talk about your project." data-i18n-attrs="content:from-your-idea-to-a-clear-useful"
     />
     <meta
       property="og:url"
@@ -32,17 +32,18 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/fragments/header.css" />
     <link rel="stylesheet" href="css/fragments/footer.css" />
+    <script src="js/i18n.js" defer></script>
     <script src="js/header.js" defer></script>
     <script src="js/index.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#contenu-principal">Aller au contenu</a>
+    <a class="skip-link" href="#contenu-principal" data-i18n="skip-to-content">Skip to content</a>
     <header class="site-header">
       <div class="brand-group">
         <a
           class="brand"
           href="index.html"
-          aria-label="Carl Stephen Jr. Software Engineer, Full-Stack Jr — accueil"
+          aria-label="Carl Stephen Jr. Software Engineer, Full-Stack Jr — home" data-i18n-attrs="aria-label:carl-stephen-jr-software-engineer-full-stack"
         >
           <img
             class="brand__avatar"
@@ -58,7 +59,7 @@
         <a
           class="brand__company"
           href="#solvix"
-          aria-label="Découvrir Solvix Engine"
+          aria-label="Discover Solvix Engine" data-i18n-attrs="aria-label:discover-solvix-engine"
           ><img
             src="assets/images/solvix-icon.webp"
             alt=""
@@ -71,54 +72,54 @@
         type="button"
         aria-expanded="false"
         aria-controls="navigation-principale"
-        aria-label="Ouvrir le menu"
+        aria-label="Open menu" data-i18n-attrs="aria-label:open-menu"
       >
         <span></span><span></span>
       </button>
       <nav
         class="primary-nav"
         id="navigation-principale"
-        aria-label="Navigation principale"
+        aria-label="Main navigation" data-i18n-attrs="aria-label:main-navigation"
       >
-        <a href="index.html" aria-current="page">Accueil</a>
-        <a href="profil.html">Mon profil</a>
+        <a href="index.html" aria-current="page" data-i18n="home">Home</a>
+        <a href="profil.html" data-i18n="my-profile">My profile</a>
         <a href="#expertise">Expertise</a>
-        <a class="nav-contact" href="#contact"
-          >Parlons de votre projet <span aria-hidden="true">↗</span></a
+        <a class="nav-contact" href="#contact" data-i18n="let-s-talk-about-your-project"
+          >Let’s talk about your project <span aria-hidden="true">↗</span></a
         >
+
+        <button class="language-switch" type="button" aria-label="Switch to French" title="Switch to French" hidden></button>
       </nav>
     </header>
     <main id="contenu-principal" class="page-content">
       <section class="hero" id="accueil" aria-labelledby="titre-accueil">
         <div class="hero-copy">
           <p class="hero-name">Carl Stephen Junior Pierre Louis</p>
-          <h1 id="titre-accueil">
-            Des idées claires.<br />Du code soigné.<br /><span
-              >Des solutions utiles.</span
+          <h1 id="titre-accueil" data-i18n="clear-ideas careful-code">
+            Clear ideas.<br />Careful code.<br /><span data-i18n="useful-solutions"
+              >Useful solutions.</span
             >
           </h1>
-          <p class="hero-description">
-            Je développe des expériences web qui relient vos objectifs aux
-            besoins de vos utilisateurs. Avec une attention constante à la
-            simplicité, à la qualité et aux détails.
+          <p class="hero-description" data-i18n="i-build-web-experiences-that-connect-your">
+            I build web experiences that connect your goals with your users’ needs, with a consistent focus on simplicity, quality and attention to detail.
           </p>
           <div class="actions">
-            <a class="button button--primary" href="#contact"
-              >Parlons de votre projet <span aria-hidden="true">↗</span></a
+            <a class="button button--primary" href="#contact" data-i18n="let-s-talk-about-your-project"
+              >Let’s talk about your project <span aria-hidden="true">↗</span></a
             >
-            <a class="button button--secondary" href="profil.html"
-              >Voir mon profil <span aria-hidden="true">→</span></a
+            <a class="button button--secondary" href="profil.html" data-i18n="view-my-profile"
+              >View my profile <span aria-hidden="true">→</span></a
             >
           </div>
-          <div class="hero-socials" aria-label="Réseaux sociaux">
+          <div class="hero-socials" aria-label="Social media" data-i18n-attrs="aria-label:social-media">
             <a
               class="social-link"
               data-social="linkedin"
               href="https://www.linkedin.com/in/carl-stephen-junior-pierre-louis-146102437?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios"
-              aria-label="Mon profil LinkedIn (nouvel onglet)"
-              title="Mon profil LinkedIn"
+              aria-label="My LinkedIn profile (new tab)"
+              title="My LinkedIn profile"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" data-i18n-attrs="aria-label:my-linkedin-profile-new-tab title:my-linkedin-profile"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
@@ -130,10 +131,10 @@
               class="social-link"
               data-social="github"
               href="https://github.com/csjpl19"
-              aria-label="Mon profil GitHub (nouvel onglet)"
-              title="Mon profil GitHub"
+              aria-label="My GitHub profile (new tab)"
+              title="My GitHub profile"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" data-i18n-attrs="aria-label:my-github-profile-new-tab title:my-github-profile"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
@@ -145,10 +146,10 @@
               class="social-link"
               data-social="whatsapp"
               href="https://wa.me/50934976307"
-              aria-label="Me contacter sur WhatsApp (nouvel onglet)"
-              title="Me contacter sur WhatsApp"
+              aria-label="Contact me on WhatsApp (new tab)"
+              title="Contact me on WhatsApp"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" data-i18n-attrs="aria-label:contact-me-on-whatsapp-new-tab title:contact-me-on-whatsapp"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
@@ -160,10 +161,10 @@
               class="social-link"
               data-social="facebook"
               href="https://www.facebook.com/share/19ddYubW1A/?mibextid=wwXIfr"
-              aria-label="Mon profil Facebook (nouvel onglet)"
-              title="Mon profil Facebook"
+              aria-label="My Facebook profile (new tab)"
+              title="My Facebook profile"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" data-i18n-attrs="aria-label:my-facebook-profile-new-tab title:my-facebook-profile"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
@@ -175,10 +176,10 @@
               class="social-link"
               data-social="instagram"
               href="https://www.instagram.com/csj.pl?vrfl=OHNkc2I1NXBxd3Q%3D&amp;utm_source=qr"
-              aria-label="Mon profil Instagram (nouvel onglet)"
-              title="Mon profil Instagram"
+              aria-label="My Instagram profile (new tab)"
+              title="My Instagram profile"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" data-i18n-attrs="aria-label:my-instagram-profile-new-tab title:my-instagram-profile"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
@@ -192,26 +193,25 @@
           <div class="portrait-frame">
             <img
               src="assets/images/portrait-professionnel.webp"
-              alt="Portrait de Carl Stephen Junior Pierre Louis"
+              alt="Portrait of Carl Stephen Junior Pierre Louis"
               width="1122"
               height="1402"
-              fetchpriority="high"
+              fetchpriority="high" data-i18n-attrs="alt:portrait-of-carl-stephen-junior-pierre-louis"
             />
           </div>
           <figcaption>
             <span>Carl Stephen Junior Pierre Louis</span
-            ><span class="portrait-proverb"
-              >« Toute grande découverte commence toujours par une simple
-              question. »</span
+            ><span class="portrait-proverb" data-i18n="every-great-discovery-always-begins-with-a"
+              >“Every great discovery always begins with a simple question.”</span
             >
           </figcaption>
         </figure>
       </section>
-      <div class="expertise-strip" aria-label="Domaines d’intervention">
-        <span>Interfaces web</span><span aria-hidden="true">✳</span
+      <div class="expertise-strip" aria-label="Areas of expertise" data-i18n-attrs="aria-label:areas-of-expertise">
+        <span data-i18n="web-interfaces">Web interfaces</span><span aria-hidden="true">✳</span
         ><span>Backend &amp; API</span><span aria-hidden="true">✳</span
-        ><span>Architecture &amp; données</span><span aria-hidden="true">✳</span
-        ><span>Qualité logicielle</span>
+        ><span data-i18n="architecture-data">Architecture &amp; data</span><span aria-hidden="true">✳</span
+        ><span data-i18n="software-quality">Software quality</span>
       </div>
       <section
         class="section about-section"
@@ -219,41 +219,36 @@
         aria-labelledby="titre-apropos"
       >
         <div>
-          <p class="eyebrow">I / L’approche</p>
-          <h2 id="titre-apropos">
-            Comprendre d’abord.<br /><span>Construire avec sens.</span>
+          <p class="eyebrow" data-i18n="i-the-approach">I / The approach</p>
+          <h2 id="titre-apropos" data-i18n="understand-first">
+            Understand first.<br /><span data-i18n="build-with-purpose">Build with purpose.</span>
           </h2>
         </div>
         <div class="about-copy">
-          <p class="lead">
-            Un bon projet commence par une bonne compréhension du problème.
+          <p class="lead" data-i18n="a-good-project-starts-with-a-clear">
+            A good project starts with a clear understanding of the problem.
           </p>
-          <p>
-            Avant de penser aux fonctionnalités, je m’intéresse à votre
-            activité, à vos utilisateurs et à ce que vous souhaitez améliorer.
-            Cette base guide les choix d’interface, la structure des données et
-            le développement.
+          <p data-i18n="before-thinking-about-features-i-focus-on">
+            Before thinking about features, I focus on your business, your users and what you want to improve. This foundation guides interface design, data structure and development.
           </p>
-          <p>
-            Mon objectif : créer une solution cohérente, agréable à utiliser et
-            facile à faire évoluer.
+          <p data-i18n="my-goal-to-create-a-coherent-solution">
+            My goal: to create a coherent solution that is easy to use and ready to evolve.
           </p>
-          <a class="text-link" href="profil.html#parcours"
-            >Découvrir mon parcours <span aria-hidden="true">↗</span></a
+          <a class="text-link" href="profil.html#parcours" data-i18n="explore-my-journey"
+            >Explore my journey <span aria-hidden="true">↗</span></a
           >
         </div>
       </section>
       <section class="section" id="expertise" aria-labelledby="titre-expertise">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">II / Les savoir-faire</p>
-            <h2 id="titre-expertise">
-              Du pilotage de projet<br /><span>à la réalisation technique.</span>
+            <p class="eyebrow" data-i18n="ii-expertise">II / Expertise</p>
+            <h2 id="titre-expertise" data-i18n="from-project-planning">
+              From project planning<br /><span data-i18n="to-technical-delivery">to technical delivery.</span>
             </h2>
           </div>
-          <p>
-            Une vision d’ensemble du projet, pour relier l’organisation, les
-            choix techniques et votre besoin.
+          <p data-i18n="a-complete-view-of-your-project-connecting">
+            A complete view of your project, connecting organisation, technical decisions and your needs.
           </p>
         </div>
         <div class="expertise-grid">
@@ -262,12 +257,11 @@
               <span class="code-icon" aria-hidden="true">&lt;/&gt;</span
               ><span>I</span>
             </div>
-            <h3>Interfaces web</h3>
-            <p>
-              Des pages lisibles et des parcours simples, pensés pour le mobile
-              comme pour le grand écran.
+            <h3 data-i18n="web-interfaces">Web interfaces</h3>
+            <p data-i18n="readable-pages-and-simple-user-journeys-designed">
+              Readable pages and simple user journeys, designed for mobile devices as well as larger screens.
             </p>
-            <p class="card-detail">Clarté · Responsive · Accessibilité</p>
+            <p class="card-detail" data-i18n="clarity-responsive-design-accessibility">Clarity · Responsive design · Accessibility</p>
           </article>
           <article class="expertise-card">
             <div class="card-top">
@@ -275,78 +269,70 @@
               ><span>II</span>
             </div>
             <h3>Backend &amp; API</h3>
-            <p>
-              La logique métier, les échanges entre services et les
-              fonctionnalités qui donnent vie à l’application.
+            <p data-i18n="business-logic-connections-between-services-and-the">
+              Business logic, connections between services and the features that bring an application to life.
             </p>
-            <p class="card-detail">Logique métier · Intégrations · API</p>
+            <p class="card-detail" data-i18n="business-logic-integrations-apis">Business logic · Integrations · APIs</p>
           </article>
           <article class="expertise-card">
             <div class="card-top">
               <span class="code-icon" aria-hidden="true">[ ]</span
               ><span>III</span>
             </div>
-            <h3>Architecture &amp; données</h3>
-            <p>
-              Une organisation réfléchie du code et des données pour faciliter
-              la maintenance et les évolutions.
+            <h3 data-i18n="architecture-data">Architecture &amp; data</h3>
+            <p data-i18n="thoughtful-code-and-data-organisation-to-make">
+              Thoughtful code and data organisation to make maintenance and future improvements easier.
             </p>
-            <p class="card-detail">Structure · Lisibilité · Maintenabilité</p>
+            <p class="card-detail" data-i18n="structure-readability-maintainability">Structure · Readability · Maintainability</p>
           </article>
           <article class="expertise-card">
             <div class="card-top">
               <span class="code-icon" aria-hidden="true"><img src="assets/icons/project-management.svg" alt="" width="26" height="26" loading="lazy"></span>
               <span>IV</span>
             </div>
-            <h3>Gestion de projets informatiques</h3>
-            <p>
-              Cadrer les besoins, organiser les étapes et suivre l’avancement
-              pour garder le projet aligné avec ses objectifs.
+            <h3 data-i18n="it-project-management">IT project management</h3>
+            <p data-i18n="define-requirements-organise-each-stage-and-track">
+              Define requirements, organise each stage and track progress to keep the project aligned with its goals.
             </p>
-            <p class="card-detail">Planification · Coordination · Suivi</p>
+            <p class="card-detail" data-i18n="planning-coordination-progress-tracking">Planning · Coordination · Progress tracking</p>
           </article>
         </div>
         <div class="quality-note">
           <span aria-hidden="true">↳</span>
-          <p>
-            <strong>La qualité comme fil conducteur.</strong> Des choix
-            techniques expliqués, une attention à la sécurité et une démarche
-            d’amélioration continue.
+          <p data-i18n="clear-technical-decisions-attention-to-security-and">
+            <strong data-i18n="quality-at-every-step">Quality at every step.</strong> Clear technical decisions, attention to security and a commitment to continuous improvement.
           </p>
         </div>
       </section>
       <section class="section process-section" aria-labelledby="titre-methode">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">III / La méthode</p>
-            <h2 id="titre-methode">
-              Un projet se construit<br /><span>dans l’échange.</span>
+            <p class="eyebrow" data-i18n="iii-the-process">III / The process</p>
+            <h2 id="titre-methode" data-i18n="good-projects-grow">
+              Good projects grow<br /><span data-i18n="through-conversation">through conversation.</span>
             </h2>
           </div>
         </div>
         <ol class="process-list">
           <li>
             <span class="step-number">I</span>
-            <h3>Écouter &amp; cadrer</h3>
-            <p>
-              Clarifier votre idée, vos priorités et les contraintes du projet
-              pour définir un périmètre réaliste.
+            <h3 data-i18n="listen-define">Listen &amp; define</h3>
+            <p data-i18n="clarify-your-idea-priorities-and-project-constraints">
+              Clarify your idea, priorities and project constraints to define a realistic scope.
             </p>
           </li>
           <li>
             <span class="step-number">II</span>
-            <h3>Concevoir &amp; développer</h3>
-            <p>
-              Transformer les besoins en une interface et des fonctionnalités,
-              avec des points d’étape réguliers.
+            <h3 data-i18n="design-develop">Design &amp; develop</h3>
+            <p data-i18n="turn-requirements-into-an-interface-and-working">
+              Turn requirements into an interface and working features, with regular progress reviews.
             </p>
           </li>
           <li>
             <span class="step-number">III</span>
-            <h3>Vérifier &amp; affiner</h3>
-            <p>
-              Tester les parcours, recueillir vos retours et préparer une mise
-              en ligne soignée.
+            <h3 data-i18n="test-refine">Test &amp; refine</h3>
+            <p data-i18n="test-user-journeys-gather-your-feedback-and">
+              Test user journeys, gather your feedback and prepare for a smooth launch.
             </p>
           </li>
         </ol>
@@ -358,24 +344,20 @@
       >
         <div class="solvix-panel">
           <div class="solvix-copy">
-            <p class="eyebrow">IV / Une vision pour demain</p>
-            <span class="status-badge">Projet de future société tech</span>
+            <p class="eyebrow" data-i18n="iv-a-vision-for-tomorrow">IV / A vision for tomorrow</p>
+            <!-- <span class="status-badge" data-i18n="a-future-tech-company">A future tech company</span> -->
             <h2 id="titre-solvix">Solvix <span>Engine.</span></h2>
-            <p class="solvix-lead">
-              L’envie de résoudre.<br />L’ambition de construire.
+            <p class="solvix-lead" data-i18n="the-drive-to-solve the-ambition-to-build">
+              The drive to solve.<br />The ambition to build.
             </p>
-            <p>
-              Solvix Engine est mon projet de future société technologique. Une
-              ambition : développer des solutions numériques utiles, en partant
-              de problèmes concrets.
+            <p data-i18n="solvix-engine-is-my-vision-for-a">
+              Solvix Engine is my vision for a future technology company. Its ambition: to develop useful digital solutions grounded in real problems.
             </p>
-            <p>
-              Cette vision se construit progressivement, dans la continuité de
-              mon parcours en développement logiciel. Le projet n’est pas encore
-              lancé.
+            <p data-i18n="this-vision-is-taking-shape-alongside-my">
+              This vision is taking shape alongside my journey in software development. The project has not launched yet.
             </p>
-            <a class="text-link" href="#contact"
-              >Échanger autour de cette vision
+            <a class="text-link" href="#contact" data-i18n="let-s-discuss-this-vision"
+              >Let’s discuss this vision
               <span aria-hidden="true">↗</span></a
             >
           </div>
@@ -383,11 +365,11 @@
             <div class="solvix-orbit" aria-hidden="true"></div>
             <img
               src="assets/images/solvix-engine.webp"
-              alt="Logo de Solvix Engine : une ampoule dorée associée à un engrenage"
+              alt="Solvix Engine logo: a golden light bulb combined with a gear"
               width="1254"
               height="1254"
-              loading="lazy"
-            /><span>Une idée aujourd’hui. Une ambition pour demain.</span>
+              loading="lazy" data-i18n-attrs="alt:solvix-engine-logo-a-golden-light-bulb"
+            /><span data-i18n="an-idea-today-an-ambition-for-tomorrow">An idea today. An ambition for tomorrow.</span>
           </div>
         </div>
       </section>
@@ -397,14 +379,13 @@
         aria-labelledby="titre-contact"
       >
         <div class="contact-copy">
-          <p class="eyebrow">V / Prenons contact</p>
-          <h2 id="titre-contact">Parlons de<br /><span>votre projet.</span></h2>
-          <p class="lead">
-            Une idée à concrétiser,<br />un besoin à éclaircir ?
+          <p class="eyebrow" data-i18n="v-get-in-touch">V / Get in touch</p>
+          <h2 id="titre-contact" data-i18n="let-s-talk-about">Let’s talk about<br /><span data-i18n="your-project">your project.</span></h2>
+          <p class="lead" data-i18n="an-idea-to-bring-to-life a-need-to-clarify">
+            An idea to bring to life,<br />a need to clarify?
           </p>
-          <p>
-            Présentez-moi votre contexte et ce que vous souhaitez construire.
-            Nous pourrons échanger sur les prochaines étapes.
+          <p data-i18n="tell-me-about-your-context-and-what">
+            Tell me about your context and what you want to build. We can discuss the next steps together.
           </p>
           <a
             class="email-link"
@@ -412,9 +393,8 @@
             >messagerie@<wbr />carlstephenjuniorpierrelouis.site
             <span aria-hidden="true">↗</span></a
           >
-          <p class="contact-aside">
-            Une opportunité professionnelle ? Vous pouvez
-            aussi m’écrire ici.
+          <p class="contact-aside" data-i18n="have-a-professional-opportunity-you-can-also">
+            Have a professional opportunity? You can also reach me here.
           </p>
         </div>
         <form
@@ -424,12 +404,12 @@
           accept-charset="UTF-8"
           aria-labelledby="titre-formulaire"
         >
-          <h3 id="titre-formulaire">Faisons connaissance.</h3>
-          <p class="form-intro">Les champs marqués d’un * sont obligatoires.</p>
+          <h3 id="titre-formulaire" data-i18n="let-s-get-acquainted">Let’s get acquainted.</h3>
+          <p class="form-intro" data-i18n="fields-marked-with-an-are-required">Fields marked with an * are required.</p>
           <input
             type="hidden"
             name="_subject"
-            value="Portfolio — Nouvelle prise de contact"
+            value="Portfolio — New enquiry" data-i18n-attrs="value:form-subject"
           />
           <input type="hidden" name="_template" value="table" />
           <input
@@ -438,7 +418,7 @@
             value="https://carlstephenjuniorpierrelouis.site/merci.html"
           />
           <div class="honeypot" aria-hidden="true">
-            <label for="website">Laissez ce champ vide</label
+            <label for="website" data-i18n="leave-this-field-empty">Leave this field empty</label
             ><input
               id="website"
               name="_honey"
@@ -449,82 +429,79 @@
           </div>
           <div class="form-grid">
             <div class="field">
-              <label for="contact-name">Votre nom *</label
+              <label for="contact-name" data-i18n="your-name">Your name *</label
               ><input
                 id="contact-name"
                 name="name"
                 type="text"
                 autocomplete="name"
-                placeholder="Prénom et nom"
+                placeholder="First and last name"
                 maxlength="100"
-                required
+                required data-i18n-attrs="placeholder:first-and-last-name"
               />
             </div>
             <div class="field">
-              <label for="contact-email">Votre e-mail *</label
+              <label for="contact-email" data-i18n="your-email">Your email *</label
               ><input
                 id="contact-email"
                 name="email"
                 type="email"
                 autocomplete="email"
-                placeholder="vous@exemple.com"
+                placeholder="you@example.com"
                 maxlength="254"
-                required
+                required data-i18n-attrs="placeholder:you-example-com"
               />
             </div>
             <div class="field field--full">
-              <label for="contact-company"
-                >Organisation <span>(facultatif)</span></label
+              <label for="contact-company" data-i18n="organisation"
+                >Organisation <span data-i18n="optional">(optional)</span></label
               ><input
                 id="contact-company"
                 name="organisation"
                 type="text"
                 autocomplete="organization"
-                placeholder="Votre entreprise ou votre structure"
-                maxlength="150"
+                placeholder="Your company or organisation"
+                maxlength="150" data-i18n-attrs="placeholder:your-company-or-organisation"
               />
             </div>
             <div class="field field--full">
-              <label for="contact-type">Le sujet de votre message *</label
+              <label for="contact-type" data-i18n="message-subject">Message subject *</label
               ><select id="contact-type" name="sujet" required>
-                <option value="">Sélectionnez un sujet</option>
-                <option>Création de site ou d’application</option>
-                <option>Amélioration d’un projet existant</option>
-                <option>Opportunité professionnelle</option>
-                <option>Échange autour de Solvix Engine</option>
-                <option>Autre demande</option>
+                <option value="" data-i18n="select-a-subject">Select a subject</option>
+                <option data-i18n="website-or-application-development" value="Website or application development">Website or application development</option>
+                <option data-i18n="improving-an-existing-project" value="Improving an existing project">Improving an existing project</option>
+                <option data-i18n="professional-opportunity" value="Professional opportunity">Professional opportunity</option>
+                <option data-i18n="discussing-solvix-engine" value="Discussing Solvix Engine">Discussing Solvix Engine</option>
+                <option data-i18n="other-enquiry" value="Other enquiry">Other enquiry</option>
               </select>
             </div>
             <div class="field field--full">
-              <label for="contact-message">Votre message *</label
+              <label for="contact-message" data-i18n="your-message">Your message *</label
               ><textarea
                 id="contact-message"
                 name="message"
                 rows="5"
                 minlength="20"
                 maxlength="5000"
-                placeholder="Votre idée, vos objectifs, vos délais… Donnez-moi quelques détails."
+                placeholder="Your idea, goals, timeline… Share a few details with me."
                 aria-describedby="message-help"
-                required
+                required data-i18n-attrs="placeholder:your-idea-goals-timeline-share-a-few"
               ></textarea
-              ><span id="message-help" class="field-help"
-                >20 à 5 000 caractères.</span
+              ><span id="message-help" class="field-help" data-i18n="20-to-5-000-characters"
+                >20 to 5,000 characters.</span
               >
             </div>
           </div>
-          <p class="form-privacy">
-            Vos informations servent à répondre à votre demande. L’envoi est
-            traité par FormSubmit, avec une vérification anti-spam à l’étape
-            suivante. <a href="confidentialite.html">En savoir plus</a>.
+          <p class="form-privacy" data-i18n="your-information-is-used-to-respond-to -">
+            Your information is used to respond to your enquiry. Submissions are handled by FormSubmit, with an anti-spam check in the next step. <a href="confidentialite.html" data-i18n="learn-more">Learn more</a>.
           </p>
-          <button class="button button--primary contact-submit" type="submit">
-            Envoyer mon message <span aria-hidden="true">↗</span>
+          <button class="button button--primary contact-submit" type="submit" data-i18n="send-my-message">
+            Send my message <span aria-hidden="true">↗</span>
           </button>
           <p class="form-status" role="status" aria-live="polite"></p>
           <noscript
-            ><p class="field-help">
-              Le formulaire fonctionne sans JavaScript. Une vérification
-              anti-spam peut vous être demandée après l’envoi.
+            ><p class="field-help" data-i18n="this-form-works-without-javascript-you-may">
+              This form works without JavaScript. You may be asked to complete an anti-spam check after submitting it.
             </p></noscript
           >
         </form>
@@ -533,24 +510,24 @@
     <footer class="site-footer">
       <div class="footer-top">
         <a class="footer-brand" href="index.html"
-          >Carl Stephen Junior Pierre Louis<span
-            >Du sens dans les idées. Du soin dans le code.</span
+          >Carl Stephen Junior Pierre Louis<span data-i18n="purpose-in-ideas-care-in-code"
+            >Purpose in ideas. Care in code.</span
           ></a
         ><a
           class="footer-backtop"
           href="#accueil"
-          aria-label="Retour en haut de page"
+          aria-label="Back to top" data-i18n-attrs="aria-label:back-to-top"
           >↑</a
         >
       </div>
       <div class="footer-bottom">
-        <p>
-          © <span data-current-year>2026</span> Carl Stephen Jr. Tous droits réservés.
+        <p data-i18n="- carl-stephen-jr-all-rights-reserved">
+          © <span data-current-year>2026</span> Carl Stephen Jr. All rights reserved.
         </p>
-        <nav aria-label="Navigation de pied de page">
-          <a href="profil.html">Mon profil</a><a href="#solvix">Solvix Engine</a
+        <nav aria-label="Footer navigation" data-i18n-attrs="aria-label:footer-navigation">
+          <a href="profil.html" data-i18n="my-profile">My profile</a><a href="#solvix">Solvix Engine</a
           ><a href="#contact">Contact</a
-          ><a href="confidentialite.html">Confidentialité</a>
+          ><a href="confidentialite.html" data-i18n="privacy">Privacy</a>
         </nav>
       </div>
     </footer>

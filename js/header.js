@@ -4,10 +4,11 @@ if (menuButton && navigation) {
   document.documentElement.classList.add('has-js');
   const setMenuOpen = (open) => {
     menuButton.setAttribute('aria-expanded', String(open));
-    menuButton.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    menuButton.setAttribute('aria-label', window.PortfolioI18n.t(open ? 'menu.close' : 'menu.open'));
     navigation.dataset.open = String(open);
   };
   setMenuOpen(false);
+  document.addEventListener('languagechange', () => setMenuOpen(menuButton.getAttribute('aria-expanded') === 'true'));
   menuButton.addEventListener('click', () => setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true'));
   navigation.addEventListener('click', (event) => { if (event.target.closest('a')) setMenuOpen(false); });
   document.addEventListener('click', (event) => {
@@ -62,5 +63,6 @@ if (navigation && document.getElementById('accueil')) {
   window.addEventListener('resize', scheduleUpdate);
   window.addEventListener('hashchange', scheduleUpdate);
   window.addEventListener('pageshow', scheduleUpdate);
+  document.addEventListener('languagechange', scheduleUpdate);
   updateCurrentSection();
 }
